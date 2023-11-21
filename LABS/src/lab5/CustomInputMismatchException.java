@@ -1,21 +1,46 @@
 package lab5;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class CustomInputMismatchException {
+
+    private static final Logger logger = Logger.getLogger(CustomInputMismatchException.class.getName());
     public static void main(String[] args) {
         System.out.print("Введите число: ");
         Scanner scan = new Scanner(System.in);
         try{
-            int number = Integer.parseInt(scan.nextLine());
+            int number =  scan.nextInt();
             System.out.println("Вывод: " + number);
             scan.close();
         } catch (InputMismatchException ex){
-            System.out.println("Enter number");
-        } catch (NumberFormatException ex){
-            System.out.println("Введенное значение не является числом!");
+            System.out.println("Необходимо ввести именно число!");
+            logException(ex);
+        } catch (java.lang.IllegalStateException ex){
+            System.out.println("Reading error");
+            logException(ex);
+    }
+}
+
+    private static void logException(Exception ex) {
+        try {
+            FileHandler fileHandler = new FileHandler("src/lab5/exceptions.log", true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            logger.addHandler(fileHandler);
+            logger.log(Level.SEVERE, "Произошло исключение!", ex);
+            fileHandler.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
+
+
+

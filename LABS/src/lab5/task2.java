@@ -1,22 +1,26 @@
 package lab5;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 
 public class task2 {
-    public static void main(String[] args) {
-        File file = new File("D:/ITIP_LABS/LABS/src/lab5/second.txt");
-        try{
-            Scanner scan = new Scanner(file);
-            while (scan.hasNextLine()){
-                System.out.println(scan.nextLine());
+    public static void main(String[] args) throws IOException {
+        try {
+            FileInputStream inputStream = new FileInputStream("src/lab5/first.txt");
+            FileOutputStream outputStream = new FileOutputStream("src/lab5/second.txt");
+            byte[] bytes = new byte[inputStream.available()];
+            int length;
+            while ((length = inputStream.read(bytes)) != -1) {
+                outputStream.write(bytes, 0, length);
             }
-            scan.close();
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File Not Founded");
-        } catch (java.lang.IllegalStateException e){
-            System.out.println("Reading error");
-        }
+        } catch (IOException e) {
+            System.out.println("Error " + e.getMessage());
     }
+}
 }
