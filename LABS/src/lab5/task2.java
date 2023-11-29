@@ -4,23 +4,33 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 
 public class task2 {
     public static void main(String[] args) throws IOException {
-        try {
-            FileInputStream inputStream = new FileInputStream("src/lab5/first.txt");
-            FileOutputStream outputStream = new FileOutputStream("src/lab5/second.txt");
-            byte[] bytes = new byte[inputStream.available()];
-            int length;
-            while ((length = inputStream.read(bytes)) != -1) {
-                outputStream.write(bytes, 0, length);
+        File file = new File("D:/ITIP_LABS/LABS/src/lab5/first.txt");
+        File filenew = new File("D:/ITIP_LABS/LABS/src/lab5/second.txt");
+        try{
+            filenew.createNewFile();
+            Scanner scan = new Scanner(file);
+            FileWriter writer = new FileWriter("D:/ITIP_LABS/LABS/src/lab5/second.txt");
+            while (scan.hasNextLine()){
+                String line = scan.nextLine();
+                writer.write(line);
+                writer.write("\n");
+                System.out.println(line);
             }
-        } catch (FileNotFoundException e) {
+            scan.close();
+            writer.close();
+        } catch (FileNotFoundException e){
             System.out.println("File Not Founded");
-        } catch (IOException e) {
-            System.out.println("Error " + e.getMessage());
+        } catch (java.lang.IllegalStateException e){
+            System.out.println("Reading error");
+        } catch (IOException e){
+            System.out.println("Write error");
+        }
     }
-}
 }

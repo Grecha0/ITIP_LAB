@@ -1,12 +1,20 @@
 package lab5;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class ArrayAverage{
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
         int sum = 0;
+        Scanner scan = new Scanner(System.in);
+        int[] arr = new int[5];
         try {
-            // Обработка массива
-            for (int i = 0; i <= arr.length; i++) {
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print("Введите значение для " + i + " элмента массива: ");
+                arr[i] = scan.nextInt();
+            }
+            scan.close();
+            for (int i = 0; i < arr.length; i++) {
                 sum += arr[i];
             }
             
@@ -14,7 +22,7 @@ public class ArrayAverage{
             System.out.println("Среднее арифметическое: " + average);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Ошибка: выход за границы массива");
-        } catch (NumberFormatException e) {
+        } catch (InputMismatchException e) {
             System.out.println("Ошибка: неверные данные в массиве");
         }
     }

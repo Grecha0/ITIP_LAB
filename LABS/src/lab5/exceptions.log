@@ -1,36 +1,9 @@
-нояб. 21, 2023 7:06:09 PM lab5.CustomInputMismatchException logException
-SEVERE: Exception occurred
-java.util.InputMismatchException
-	at java.base/java.util.Scanner.throwFor(Scanner.java:947)
-	at java.base/java.util.Scanner.next(Scanner.java:1602)
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2267)
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2221)
-	at lab5.CustomInputMismatchException.main(CustomInputMismatchException.java:19)
-
-нояб. 21, 2023 8:16:15 PM lab5.CustomInputMismatchException logException
-SEVERE: Exception occurred
-java.util.InputMismatchException
-	at java.base/java.util.Scanner.throwFor(Scanner.java:947)
-	at java.base/java.util.Scanner.next(Scanner.java:1602)
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2267)
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2221)
-	at lab5.CustomInputMismatchException.main(CustomInputMismatchException.java:20)
-
-нояб. 21, 2023 8:17:26 PM lab5.CustomInputMismatchException logException
+нояб. 22, 2023 12:13:28 AM lab5.CustomInputMismatchException logException
 SEVERE: Произошло исключение!
 java.util.InputMismatchException
 	at java.base/java.util.Scanner.throwFor(Scanner.java:947)
 	at java.base/java.util.Scanner.next(Scanner.java:1602)
 	at java.base/java.util.Scanner.nextInt(Scanner.java:2267)
 	at java.base/java.util.Scanner.nextInt(Scanner.java:2221)
-	at lab5.CustomInputMismatchException.main(CustomInputMismatchException.java:20)
-
-нояб. 21, 2023 8:18:58 PM lab5.CustomInputMismatchException logException
-SEVERE: Произошло исключение!
-java.lang.IllegalStateException: Scanner closed
-	at java.base/java.util.Scanner.ensureOpen(Scanner.java:1158)
-	at java.base/java.util.Scanner.next(Scanner.java:1581)
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2267)
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2221)
-	at lab5.CustomInputMismatchException.main(CustomInputMismatchException.java:21)
+	at lab5.CustomInputMismatchException.main(CustomInputMismatchException.java:16)
 

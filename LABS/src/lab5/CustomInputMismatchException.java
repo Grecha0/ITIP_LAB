@@ -1,7 +1,4 @@
 package lab5;
-
-
-import java.io.File;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -11,7 +8,6 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class CustomInputMismatchException {
-
     private static final Logger logger = Logger.getLogger(CustomInputMismatchException.class.getName());
     public static void main(String[] args) {
         System.out.print("Введите число: ");
@@ -28,10 +24,9 @@ public class CustomInputMismatchException {
             logException(ex);
     }
 }
-
     private static void logException(Exception ex) {
         try {
-            FileHandler fileHandler = new FileHandler("src/lab5/exceptions.log", true);
+            FileHandler fileHandler = new FileHandler("D:/ITIP_LABS/LABS/src/lab5/exceptions.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             logger.addHandler(fileHandler);
             logger.log(Level.SEVERE, "Произошло исключение!", ex);
