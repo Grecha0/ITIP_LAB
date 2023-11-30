@@ -11,12 +11,12 @@ import java.util.Scanner;
 
 public class task2 {
     public static void main(String[] args) throws IOException {
-        File file = new File("D:/ITIP_LABS/LABS/src/lab5/first.txt");
-        File filenew = new File("D:/ITIP_LABS/LABS/src/lab5/second.txt");
+        File file = new File("D:/ITIP_LABS/LABS/src/lab4/first.txt");
+        File filenew = new File("D:/ITIP_LABS/LABS/src/lab4/second.txt");
         try{
             filenew.createNewFile();
             Scanner scan = new Scanner(file);
-            FileWriter writer = new FileWriter("D:/ITIP_LABS/LABS/src/lab5/second.txt");
+            FileWriter writer = new FileWriter("D:/ITIP_LABS/LABS/src/lab4/second.txt");
             while (scan.hasNextLine()){
                 String line = scan.nextLine();
                 writer.write(line);
