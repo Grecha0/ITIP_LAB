@@ -1,4 +1,12 @@
-нояб. 22, 2023 12:13:28 AM lab5.CustomInputMismatchException logException
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+нояб. 30, 2023 12:27:58 AM lab5.CustomInputMismatchException logException
 SEVERE: Произошло исключение!
 java.util.InputMismatchException
 	at java.base/java.util.Scanner.throwFor(Scanner.java:947)
