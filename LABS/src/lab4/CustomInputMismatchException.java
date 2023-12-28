@@ -26,7 +26,7 @@ public class CustomInputMismatchException {
 }
     private static void logException(Exception ex) {
         try {
-            FileHandler fileHandler = new FileHandler("D:/ITIP_LABS/LABS/src/lab5/exceptions.log", true);
+            FileHandler fileHandler = new FileHandler("D:/ITIP_LABS/LABS/src/lab4/exceptions.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             logger.addHandler(fileHandler);
             logger.log(Level.SEVERE, "Произошло исключение!", ex);
