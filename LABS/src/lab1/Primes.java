@@ -1,3 +1,4 @@
+package lab1;
 public class Primes {
     public static void main(String[] args) {
         int n = 2;
